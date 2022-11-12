@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 import PySimpleGUI as sg
 import time, argparse
 from sys import stdin, stderr
@@ -54,7 +56,7 @@ while True:
         try:
             temp_db[line.split()[0]].append(line)
         except:
-            stderr.write(line)
+            stderr.write(f"Couldn't identify the channel of the string: {line} \n")
             continue
         for ch in channels:
             window[ch].update(temp_db[ch])
